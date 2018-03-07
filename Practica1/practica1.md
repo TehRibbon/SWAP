@@ -1,8 +1,10 @@
 # Práctica 1
 
-##### Instalación de dos máquinas virtuales (usando VirtualBox) mostrándo su correcto funcionamiento.
+## Instalación de dos máquinas virtuales (usando VirtualBox) mostrándo su correcto funcionamiento.
 
-Instalo ambas máquinas virtuales en virtualbox, así como LAMP y SSH en cada una de ellas. 
+Instalo ambas máquinas virtuales en virtualbox, así como LAMP y SSH en cada una de ellas.
+LAMP: (durante la instalación de UbuntuServer)
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/1.png)
 
 
 
@@ -15,8 +17,10 @@ Podría también haber instalado ssh directamente durante la instalación de ubu
 Activo en ambas máquinas la cuenta root para no tener que escribir "sudo" al principio de cada comando:
 
 `sudo passwd root`
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/2.png)
 
-Compruebo que se ha instalado correctamente LAMP:
+Compruebo que se ha instalado correctamente LAMP, mirando la versión de apache por ejemplo:
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/3.png)
 
 Ha quedado comprobado que funciona, por lo que creo un fichero html en /var/www/hola.html
 
@@ -25,12 +29,15 @@ Una vez creado, reinicio apache para que se guarden los cambios:
 `service apache2 reload`
 
 Para que ambas máquinas virtuales tengan conexión entre sí, así como cada máquina conexión con el anfitrión tengo que modificar la configuración de Red de VirtualBox, añadiendo: 
-
-
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/4.png)
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/5.png)
 
 Además, hay que añadir un par de líneas de el archivo /etc/network/interfaces:
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/6.png)
 
-Con esto, ya debería estar establecidas las conexiones entre las máquinas correctamente.
+Con esto, ya debería estar establecidas las conexiones entre las máquinas correctamente. Voy a comprobarlo:
+Curl entre las máquinas: ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/7.png)
+Y desde el anfitrión a ambas máquinas: ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/8.png)
 
 Para permitir establecer la conexión de ssh de una máquina a otra, tengo que editar el ficher /etc/ssh/sshd_config, habilitándo el acceso de root mediante contraseña:
 
@@ -39,4 +46,6 @@ Para permitir establecer la conexión de ssh de una máquina a otra, tengo que e
 Reinicio el servicio, y ya funciona:
 
 `systemctl restart sshd.service`
+
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/9.png)
 
