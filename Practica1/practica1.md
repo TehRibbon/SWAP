@@ -24,10 +24,12 @@ Compruebo que se ha instalado correctamente LAMP, mirando la versión de apache 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/3.png)
 
 Ha quedado comprobado que funciona, creo un fichero html en /var/www/hola.html para después:
+
 `<HTML>
   <BODY>Fichero de prueba. Este servidor funciona! :D
   </BODY>
  </HTML>`
+ 
 Y algo similiar en la otra máquina.
 Una vez creado, reinicio apache para que se guarden los cambios:
 
