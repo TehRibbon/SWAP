@@ -23,8 +23,12 @@ Activo en ambas máquinas la cuenta root para no tener que escribir "sudo" al pr
 Compruebo que se ha instalado correctamente LAMP, mirando la versión de apache por ejemplo:
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/3.png)
 
-Ha quedado comprobado que funciona, por lo que creo un fichero html en /var/www/hola.html
-
+Ha quedado comprobado que funciona, creo un fichero html en /var/www/hola.html para después:
+`<HTML>
+  <BODY>Fichero de prueba. Este servidor funciona! :D
+  </BODY>
+ </HTML>`
+Y algo similiar en la otra máquina.
 Una vez creado, reinicio apache para que se guarden los cambios:
 
 `service apache2 reload`
