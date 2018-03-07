@@ -17,6 +17,7 @@ Podría también haber instalado ssh directamente durante la instalación de ubu
 Activo en ambas máquinas la cuenta root para no tener que escribir "sudo" al principio de cada comando:
 
 `sudo passwd root`
+
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/2.png)
 
 Compruebo que se ha instalado correctamente LAMP, mirando la versión de apache por ejemplo:
