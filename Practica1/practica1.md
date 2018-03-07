@@ -35,6 +35,7 @@ Para que ambas máquinas virtuales tengan conexión entre sí, así como cada m�
 
 Además, hay que añadir un par de líneas de el archivo /etc/network/interfaces:
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/6.png)
+Es importante tener en cuenta que la dirección debe ser distinta en ambas máquinas, y que estén dentro del rango establecido en las Preferencias de VirtualBox.
 
 Con esto, ya debería estar establecidas las conexiones entre las máquinas correctamente. Voy a comprobarlo:
 Curl entre las máquinas: ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica1/Capturas/7.png)
