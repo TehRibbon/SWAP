@@ -25,11 +25,12 @@ Compruebo que se ha instalado correctamente LAMP, mirando la versión de apache 
 
 Ha quedado comprobado que funciona, creo un fichero html en /var/www/hola.html para después:
 
-`<HTML>
-  <BODY>Fichero de prueba. Este servidor funciona! :D
-  </BODY>
- </HTML>`
- 
+`<HTML>`
+
+  `<BODY>Fichero de prueba. Este servidor funciona! :D`
+  ` </BODY>`
+ `</HTML>`
+
 Y algo similiar en la otra máquina.
 Una vez creado, reinicio apache para que se guarden los cambios:
 
