@@ -19,6 +19,8 @@ Voy a probar la transmisión de un fichero tar.tgz por ssh, desde la máquina sw
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/tarssh.png)
 
+### Clonar contenido entre dos máquinas con rsync
+
 Instalo la herramienta rsync mediante el comando:
 
 `sudo apt-get install rysnc`
@@ -28,8 +30,6 @@ Para no tener que estar trabajando como root o teniéndo que introducir constant
 `sudo chown tehribbon:tehribbon -R /var/www`
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/chown.png)
-
-### Clonar contenido entre dos máquinas con rsync
 
 Para probar el correcto funcionamiento de rsync, voy a crear un archivo básico en /var/www/html/
 
