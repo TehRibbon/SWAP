@@ -17,7 +17,7 @@ Hay que llevar a cabo las siguientes tareas:
 
 Voy a probar la transmisión de un fichero tar.tgz por ssh, desde la máquina swap2018(máquina 1 en adelante) a la máquina swap2018-2(máquina 2 en adelante):
 
-![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/comandossh.png)
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/tarssh.png)
 
 Instalo la herramienta rsync mediante el comando:
 
