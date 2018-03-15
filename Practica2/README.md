@@ -2,7 +2,7 @@
 
 ## Clonar la información de un sitio web
 
-#### Cuestiones a resolver
+### Cuestiones a resolver
 
 Hay que llevar a cabo las siguientes tareas:
 
@@ -13,7 +13,7 @@ Hay que llevar a cabo las siguientes tareas:
 
 *************************
 
-##### Funcionamiento de la copia de archivos por ssh
+### Funcionamiento de la copia de archivos por ssh
 
 Voy a probar la transmisión de un fichero tar.tgz por ssh, desde la máquina swap2018(máquina 1 en adelante) a la máquina swap2018-2(máquina 2 en adelante):
 
@@ -29,7 +29,7 @@ Para no tener que estar trabajando como root o teniéndo que introducir constant
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/chown.png)
 
-###### Clonar contenido entre dos máquinas con rsync
+### Clonar contenido entre dos máquinas con rsync
 
 Para probar el correcto funcionamiento de rsync, voy a crear un archivo básico en /var/www/html/
 
@@ -39,7 +39,6 @@ Vemos como en la máquina 2 el fichero no existe, ahora para clonar la carpeta d
 
 `rsync -avz -e ssh 192.168.56.101:/var/www/ /var/www/`
 
-----imagen rsync2 ----
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/rsync2.png)
 
 Podría especificar que directorios copiar y cuales ignorar con la orden:
@@ -48,7 +47,7 @@ Podría especificar que directorios copiar y cuales ignorar con la orden:
 
 Los directorios especificados con --exclude=**/loquesea indica los directorios que no deben copiarse y con --delete, los archivos que se hayan borrado en la máquina origen se borrarán también en la que vamos a clonar.
 
-##### Configurar el ssh para acceder sin contraseña
+### Configurar el ssh para acceder sin contraseña
 
 Con el fin de poder realizar actualizaciones automáticas con rsync sin tener que depender del administrador, voy a configurar ssh para poder acceder sin contraseña. Para ello usaré autenticación con un par de claves pública-privada.
 
@@ -76,7 +75,7 @@ Añadiendo tras el ssh un comando, se ejecuta en la máquina destino, en nuestro
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/comandossh.png)
 
-##### Establecer tareas en cron
+### Establecer tareas en cron
 
 Como ultimo apartado, se va a automatizar el proceso de clonado de la información mediante cron.
 
