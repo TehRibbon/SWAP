@@ -84,7 +84,7 @@ Vemos en este fichero las tareas ejecutadas cada x tiempo (horas, dias, semanas,
 
 `0 * * * * tehribbon rsync -avz --delete -e ssh 192.168.56.101:/var/www/ /var/www/ `
 
-Lo cual clonará la carpeta /var/www/ de 192.168.56.101, borrandose también aquellos elementos que se borrasen en la máquina principal, cada hora **:00, es decir, a las 00:00, 01:00, ...,23:00 todos los días del mes, todos los meses, todos los días de la semana llevado a cabo por el usuario tehribbon (el cual tiene permiso para realizar el rsync) 
+Lo cual clonará la carpeta /var/www/ de 192.168.56.101, borrándose también aquellos elementos que se borrasen en la máquina principal, cada hora **:00, es decir, a las 00:00, 01:00, ...,23:00 todos los días del mes, todos los meses, todos los días de la semana llevado a cabo por el usuario tehribbon (el cual tiene permiso para realizar el rsync) 
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/cron.png)
 
@@ -96,7 +96,7 @@ Sin actualizar:
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/sinactualizar.png)
 
-Y compruebo que realmente se ha producido las actualizaciones tras ir creando ficheros en la máquina principal:
+Y compruebo que realmente se han producido las actualizaciones tras ir creando ficheros en la máquina principal:
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica2/Capturas/actualizaciones.png)
 
