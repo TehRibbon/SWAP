@@ -2,3 +2,4 @@
 
 ## Prácticas
   - [Práctica 1](https://github.com/TehRibbon/SWAP/tree/master/Practica1)
+  - [Práctica 2](https://github.com/TehRibbon/SWAP/tree/master/Practica2)
