@@ -19,6 +19,8 @@ Las direcciones IP de las máquinas durante la práctica será:
 |       SWAP nginx        | 192.168.56.103 |
 |      SWAP haproxy       | 192.168.56.104 |
 
+****
+
 #### NGINX
 
 ##### INSTALACIÓN
