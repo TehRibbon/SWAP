@@ -1,8 +1,8 @@
-# Práctica 3. 
+# Práctica 3
 
 ## Balanceo de carga
 
-###### Cuestiones a resolver:
+### Cuestiones a resolver:
 
  - Configurar una máquina e instalar el nginx como balanceador de carga.
  - Configurar una máquina e instalar el haproxy como balanceador de carga.
@@ -19,9 +19,9 @@ Las direcciones IP de las máquinas durante la práctica será:
 |       SWAP nginx        | 192.168.56.103 |
 |      SWAP haproxy       | 192.168.56.104 |
 
-##### NGINX
+#### NGINX
 
-###### INSTALACIÓN
+##### INSTALACIÓN
 
 En la máquina balanceadora, instalo nginx mediante los comandos:
 
@@ -31,7 +31,7 @@ En la máquina balanceadora, instalo nginx mediante los comandos:
 
 `sudo systemctl start nginx`
 
-###### CONFIGURACIÓN
+##### CONFIGURACIÓN
 
 Hay que modificar el fichero /etc/nginx/conf.d/default.conf para crear la configuración que necesitamos. En este fichero hay dos bloques principales:
 
@@ -40,7 +40,7 @@ Hay que modificar el fichero /etc/nginx/conf.d/default.conf para crear la config
 
 El fichero final de configuración quedará como:
 
-~~FOTO config~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/nginx_conf.png)
 
 Además he tenido que comentar la línea en /etc/nginx/nginx.conf para que actuase como balanceador y no como servidor web:
 
@@ -52,11 +52,11 @@ Iniciamos el servicio de nginx:
 
 Compruebo que está escuchando en el puerto 80 nginx, y no otro software.
 
-~~puertoescucha.png~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/puertoescucha.png)
 
 Para comprobar que está funcionando voy a realizar peticiones a esta máquina balanceadora.
 
-~~FOTO comp_nginx~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/comp_nginx.png)
 
 Y muestra de forma alternativa la página de inicio de cada una de las máquinas
 
@@ -68,7 +68,7 @@ Podemos modificar el valor de "weight" de cada máquina para que atribuyamos mas
 
 De cada 3 peticiones, 1 será para la máquina 1, y 2 para la máquina 2, entendiéndose así la máquinas mas potente o menos sobrecargada a la máquina 2.
 
-~~foto pesos~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/peticionespeso.png)
 
 También se puede realizar un balanceo añadiendo en el default.conf, dentro de upstream apaches:
 
@@ -78,21 +78,21 @@ Para que la conexión se realice de forma persistente (KeepAlive) añadimos al f
 
 `keepalive 3`
 
-##### HAPROXY
+#### HAPROXY
 
 Creo otra máquina distinta para configurar el balanceador de carga con haproxy
 
-###### INSTALACIÓN
+##### INSTALACIÓN
 
 Instalo haproxy en la máquina mediante:
 
 `sudo apt-get install haproxy`
 
-###### CONFIGURACIÓN
+##### CONFIGURACIÓN
 
 Tengo que editar el archivo /etc/haproxy/haproxy.cfg, quedando de la forma:
 
-~~confighaproxy~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/confhaproxy.png)
 
 Lanzo el servidio haproxy con:
 
@@ -100,9 +100,9 @@ Lanzo el servidio haproxy con:
 
 Y compruebo si está funcionando correctamente realizando peticiones desde el anfitrión:
 
-~~comphaproxy~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/comphaproxy.png)
 
-##### APACHE BENCHMARK
+#### APACHE BENCHMARK
 
 Voy a realizar el benchmark desde mi máquina anfitrión, para ello el comando que voy a usar, tanto para nginx como haproxy:
 
@@ -112,11 +112,11 @@ Voy a realizar el benchmark desde mi máquina anfitrión, para ello el comando q
 
 Y los resultados son, para nginx:
 
-~~abnginx~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/abnginx.png)
 
 Y para haproxy:
 
-~~haproxy~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/abhaproxy.png)
 
 Y aumentando el numero de peticiones y concurrencia, con el comando:
 
@@ -126,10 +126,10 @@ Y aumentando el numero de peticiones y concurrencia, con el comando:
 
 Los resultados son, para nginx:
 
-~~abnginxlargo~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/abnginxlargo.png)
 
 Y para haproxy:
 
-~~abhaproxylargo~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica3/Capturas/abhaproxylargo.png)
 
 En ambos tests nginx ha sido mas rápido, pero debido a la sencillez de la granja web y de las peticiones realizadas, no puedo determinar como conclusión que balanceador es mejor bajo estos términos.
