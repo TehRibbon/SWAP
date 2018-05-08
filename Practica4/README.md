@@ -4,7 +4,7 @@
 
 Cuestiones a resolver:
 
- - Crear e instalar en las máquinas un certificado SSL autofirmado para configurar el acceso HTTPS a los servidores. Configurr también el balanceador de carga para aceptar tanto el tráfico HTTP como el HTTPS
+ - Crear e instalar en las máquinas un certificado SSL autofirmado para configurar el acceso HTTPS a los servidores. Configurar también el balanceador de carga para aceptar tanto el tráfico HTTP como el HTTPS
  - Configurar las reglas del cortafuegos con IPTABLES para asegurar el acceso a uno de los servidores web. Esta configuración se hará en una de las máquinas servidoras finales
 
 
@@ -70,4 +70,5 @@ La configuración debería ser distinta ahora. Compruebo de nuevo mediante nmap,
 Para acabar, faltaría configurar este script para ejecutarlo cuando se encienda la máquina, para ello he añadido en /etc/rc.local el comando a ejecutar:
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica4/Capturas/reboot.png)
+
 Por lo que ejecutará dicho script (que configura IPTABLES correctamente) y la configuración será la deseada.
