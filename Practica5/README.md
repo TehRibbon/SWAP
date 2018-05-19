@@ -2,7 +2,7 @@
 
 ## Replicación de bases de datos MySQL
 
-##### Cuestiones a resolver:
+### Cuestiones a resolver:
 
  - Crear una BD con al menos una tabla y algunos datos
  - Relizar la copia de seguridad de la BD completa usando mysqldump en la máquina principal y copiar el archivo de copia de seguridad al máquina secundaria.
@@ -11,7 +11,7 @@
 
 ****
 
-###### Crear una BD e insertar datos
+#### Crear una BD e insertar datos
 
 Para crear una base de datos, entramos en mysql como root con el comando:
 
@@ -19,29 +19,29 @@ Para crear una base de datos, entramos en mysql como root con el comando:
 
 Nos solicitará la contraseña del usuario en cuestión. Ya estamos dentro de mysql, ahora solo hay que ejecutar la query para crear la base de datos:
 
-~~IMAGEN 2~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/2.png)
 
 Con este comando hemos creado la base de datos, ahora para crear una tabla e insertar datos en ella:
 
-~~IMAGEN 3~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/3.png)
 
 Podemos comprobar la estructura de la base de datos con el siguiente comando:
 
-~~IMAGEN 4~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/4.png)
 
-###### Replicar una BD MySQL con mysqldump
+#### Replicar una BD MySQL con mysqldump
 
 Una vez creada la BD, pasamos a exportarla mediante el comando:
 
-~~IMAGEN 5~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/5.png)
 
 La base de datos se ha exportado al directorio temporal /tmp:
 
-~~IMAGEN 6~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/6.png)
 
 Desde la máquina esclavo, para obtener el fichero .sql ejecuto:
 
-~~IMAGEN 7~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/7.png)
 
 Una vez copiado el fichero, entramos en mysql con el comando:
 
@@ -49,11 +49,11 @@ Una vez copiado el fichero, entramos en mysql con el comando:
 
 Y ejecuto:
 
-~~IMAGEN 8~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/8.png)
 
 Y la BD ha sido importada.
 
-###### Replicación mediante configuración maestro-esclavo
+#### Replicación mediante configuración maestro-esclavo
 
 Desde la máquina maestra, editamos el fichero `/etc/mysql/mysql.conf.d/mysqld.cnf`
 
@@ -63,7 +63,7 @@ El maestro está configurado correctamente, ahora desde el esclavo edito el mism
 
 Desde la máquina servidora creo un usuario esclavo y le proporcion privilegios, además mostramos la siguiente información:
 
-~~IMAGEN 10~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/10.png)
 
 En la máquina esclava, teniendo en cuenta la información de la imagen anterior, ejecuto el comando (dentro de mysql):
 
@@ -73,8 +73,8 @@ Y ejecuto el comando: `START SLAVE`
 
 Compruebo que todo está funcionando correctamente:
 
-~~IMAGEN 20~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/20.png)
 
 Y ahora, todos los cambios que realiza en la BD de la máquina master, se replicaran en el esclavo:
 
-~~IMAGEN 21~~
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/21.png)
