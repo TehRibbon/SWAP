@@ -78,3 +78,14 @@ Compruebo que todo está funcionando correctamente:
 Y ahora, todos los cambios que realiza en la BD de la máquina master, se replicaran en el esclavo:
 
 ![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/21.png)
+
+#### Replicación mediante configuración maestro-esclavo(opcional)
+
+Para realizar una configuración de replicación maestro-maestro, tenemos que repetir la configuración de crear un usuario y proporcionarle privilegios de la forma opuesta, para que ambas máquinas estén a la escucha de la otra.
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/user.png)
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/master.png)
+
+Y compruebo que la configuración maestro-maestro es correcta, si edito en cualquier máquina la otra se actualiza automáticamente:
+
+![imagen](https://github.com/TehRibbon/SWAP/blob/master/Practica5/Capturas/final.png)
+
