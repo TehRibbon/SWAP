@@ -5,4 +5,5 @@
   - [Práctica 2](https://github.com/TehRibbon/SWAP/tree/master/Practica2)
   - [Práctica 3](https://github.com/TehRibbon/SWAP/tree/master/Practica3)
   - [Práctica 4](https://github.com/TehRibbon/SWAP/tree/master/Practica4)
+  - [Práctica 5](https://github.com/TehRibbon/SWAP/tree/master/Practica5)
   - [Trabajo](https://github.com/TehRibbon/SWAP/tree/master/Trabajo)
